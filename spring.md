@@ -26,7 +26,22 @@ spring
 
 @Bean
 
+----------------------------------------------------
+@EnableAutoConfiguration
+//@EnableAutoConfiguration은 사전에 정의한 라이브러리들을  Bean으로 등록해 주는 어노테이션입니다. 
+사전에 정의한 라이브러리들 모두가 등록되는 것은 아니고 특정 Condition(조건)이 만족될 경우에 Bean으로 등록합니다.
+
+사전 정의 파일 위치
+Dependencies > spring-boot-autoconfigure > META-INF > spring.factories
+
+@OnBeanCondition : 특정 Bean이 사전에 생성되어있지 않을 경우에 조건이 만족됩니다.
+@ConditionalOnBean : 특정 Bean이 이미 생성되어있을 경우에 조건이 만족됩니다.
+@ConditionalOnClass : Classpath에 특정 class가 존재할 경우에 조건이 만족됩니다.
+
+--------------------------------------------------------
+
 @ComponentScan
+//@ComponentScan은 @component 어노테이션 및 @Service, @Repository, @Controller 등의 어노테이션을 스캔하여 Bean으로 등록해주는 어노테이션입니다
 
 @EnableAspectJAutoProxy
 
